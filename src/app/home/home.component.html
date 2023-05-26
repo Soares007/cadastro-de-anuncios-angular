@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="d-flex gap-5 mt-2">
+  <div *ngFor="let dados of anuncio">
+    <div *ngIf="dados.status" style="position: relative;">
+      <div class="card m-auto" style="width: 18rem; height: 27rem;">
+        <img src="{{dados.imagem}}" class="card-img-top" alt="{{dados.titulo}}" style="height: 214px;">
+        <div class="card-body">
+          <h5 class="card-title">{{dados.titulo}}</h5>
+          <h6>{{dados.preco | currency:'BRL':'symbol':'1.2-2'}}</h6>
+          <p class="card-text mb-3">{{dados.descricao}}</p>
+        </div>
+        <div style="position: absolute; bottom: 0;">
+          <small style="font-style: italic;">Expira em {{dados.data | date:'dd/MM/yyyy'}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

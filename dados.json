@@ -1,0 +1,31 @@
+{
+  "anuncios": [
+    {
+      "id": 1,
+      "titulo": "Porshe Panamera",
+      "preco": 6890000000,
+      "descricao": "O Panamera é um automóvel de luxo sedã de 4 portas de porte grande.",
+      "data": "2022-01-21",
+      "imagem": "https://www.andreveiculos.com.br/wp-content/uploads/2023/01/Porsche_Panamera_4_E-Hybrid_Preta_2021_01-1.jpg",
+      "status": true
+    },
+    {
+      "id": 2,
+      "titulo": "Lamborghini Veneno",
+      "preco": 4450000000,
+      "descricao": "A Veneno é um automóvel de luxo de 2 portas de porte grande.",
+      "data": "2023-05-02",
+      "imagem": "https://uploads.diariodopoder.com.br/2021/07/0400e97d-lamborghini-aventador_lp780-4_ultimae_roadster-2022-1600-01.jpg",
+      "status": true
+    },
+    {
+      "id": 3,
+      "titulo": "Mc Laren 720s",
+      "preco": 480000000,
+      "descricao": "A Mc Laren é um automóvel de luxo de 2 portas de porte grande.",
+      "data": "2023-05-24",
+      "imagem": "https://mclaren.scene7.com/is/image/mclaren/720S-Coupe_hero:crop-16x9?",
+      "status": true
+    }
+  ]
+}

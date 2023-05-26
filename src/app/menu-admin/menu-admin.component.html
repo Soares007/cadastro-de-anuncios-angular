@@ -1,19 +1,19 @@
 <div class="row">
   <div class="col-8 m-auto">
-    <form>
+    <form [formGroup]="formGroupAnuncio">
       <div class="mb-3">
         <div class="display-6 text-center">
           Cadastro de Anúncios
         </div>
       </div>
       <div class="mb-3">
-        <label for="name" class="form-label">Título:</label>
-        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Título do anúncio">
+        <label for="titulo" class="form-label">Título:</label>
+        <input type="text" formControlName="titulo" class="form-control" id="titulo" placeholder="Título do anúncio">
       </div>
       <div class="mb-3">
-        <label for="phone_number" class="form-label">Descrição:</label>
-        <input type="number" formControlName="phone_number" class="form-control" id="Descrição do anúncio"
-          placeholder="Seu numero de telefone">
+        <label for="descricao" class="form-label">Descrição:</label>
+        <input type="text" formControlName="descricao" class="form-control" id="Descrição do anúncio"
+          placeholder="Descrição do seu anúncio">
       </div>
       <div class="mb-3">
         <label for="preco" class="form-label">Preço:</label>
@@ -29,15 +29,15 @@
       </div>
       <div class="mb-3">
         <div class="d-flex flex-nowrap gap-2">
-          <label class="form-check-label">Li e aceito os termos de exibição:</label>
+          <label class="form-check-label">Anúncio Ativo ? :</label>
           <div class="form-check">
-            <input type="checkbox" formControlName="isAcceptedTerms" class="form-check-input">
+            <input type="checkbox" formControlName="status" class="form-check-input">
           </div>
         </div>
       </div>
       <div class="mb-3 d-flex justify-content-end gap-2">
-        <button class="btn btn-success">Salvar</button>
-        <button class="btn btn-danger">Limpar</button>
+        <button class="btn btn-success" (click)="save()">Salvar</button>
+        <button class="btn btn-danger" (click)="limparDados()">Limpar</button>
       </div>
     </form>
   </div>
@@ -49,26 +49,24 @@
       <th scope="col">Título</th>
       <th scope="col">Descrição</th>
       <th scope="col">Preço</th>
-      <th scope="col">Categoria</th>
-      <th scope="col">Produto</th>
-      <th scope="col">Termos</th>
+      <th scope="col">Validade</th>
+      <th scope="col">Imagem</th>
       <th scope="col">Status</th>
       <th scope="col">Opções</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-        <button class="btn btn-primary me-2">Editar</button>
-        <button class="btn btn-danger">Excluir</button>
+    <tr *ngFor="let dados of anuncio">
+      <th scope="row">{{dados.id}}</th>
+      <td>{{dados.titulo}}</td>
+      <td>{{dados.descricao}}</td>
+      <td>{{dados.preco | currency:'BRL':'symbol':'1.2-2' }}</td>
+      <td class="break">{{dados.data | date:'dd/MM/yyyy' }}</td>
+      <td><img src='{{dados.imagem}}' class="card-img-top" alt='{{dados.titulo}}' style="width: 100px;"></td>
+      <td><strong>{{dados.status  ? 'Ativo' : 'Desativado'}}</strong></td>
+      <td class="d-flex flex-column gap-1">
+        <button class="btn btn-primary" (click)="edit(dados)">Editar</button>
+        <button class="btn btn-danger" (click)="delete(dados)">Excluir</button>
       </td>
     </tr>
   </tbody>
