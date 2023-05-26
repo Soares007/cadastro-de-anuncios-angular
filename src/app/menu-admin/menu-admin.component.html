@@ -9,23 +9,38 @@
       <div class="mb-3">
         <label for="titulo" class="form-label">Título:</label>
         <input type="text" formControlName="titulo" class="form-control" id="titulo" placeholder="Título do anúncio">
+        <div *ngIf="submitted && title.invalid">
+          <small class="text-danger">Título Inválido!</small>
+        </div>
       </div>
       <div class="mb-3">
         <label for="descricao" class="form-label">Descrição:</label>
         <input type="text" formControlName="descricao" class="form-control" id="Descrição do anúncio"
           placeholder="Descrição do seu anúncio">
+          <div *ngIf="submitted && description.invalid">
+            <small class="text-danger">Descrição Inválido!</small>
+          </div>
       </div>
       <div class="mb-3">
         <label for="preco" class="form-label">Preço:</label>
         <input type="number" formControlName="preco" class="form-control" id="preco" placeholder="Preço do produto">
+        <div *ngIf="submitted && price.invalid">
+          <small class="text-danger">Preço Inválido!</small>
+        </div>
       </div>
       <div class="mb-3">
-        <label for="preco" class="form-label">Data de Validade:</label>
+        <label for="data" class="form-label">Data de Validade:</label>
         <input type="date" formControlName="data" class="form-control" id="preco">
+        <div *ngIf="submitted && data.invalid">
+          <small class="text-danger">Data Inválida!</small>
+        </div>
       </div>
       <div class="mb-3">
         <label for="imagem" class="form-label">Imagem:</label>
         <input type="text" formControlName="imagem" class="form-control" id="imagem" placeholder="Imagem do anúncio">
+        <div *ngIf="submitted && image.invalid">
+          <small class="text-danger">Imagem Inválida!</small>
+        </div>
       </div>
       <div class="mb-3">
         <div class="d-flex flex-nowrap gap-2">
