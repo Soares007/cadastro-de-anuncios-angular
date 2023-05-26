@@ -87,4 +87,19 @@ export class MenuAdminComponent {
     this.submitted = false;
   }
 
+  get title(): any {
+    return this.formGroupAnuncio.get("titulo");
+  }
+  get price(): any {
+    return this.formGroupAnuncio.get("preco");
+  }
+  get description(): any {
+    return this.formGroupAnuncio.get("descricao");
+  }
+  get data(): any {
+    return this.formGroupAnuncio.get("data");
+  }
+  get image(): any {
+    return this.formGroupAnuncio.get("imagem");
+  }
 }
