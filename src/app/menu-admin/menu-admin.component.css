@@ -1,0 +1,4 @@
+.card-img-top:hover {
+    transform: scale(2);
+    cursor: pointer;
+}
