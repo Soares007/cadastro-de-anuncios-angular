@@ -26,6 +26,15 @@
       "data": "2023-05-24",
       "imagem": "https://mclaren.scene7.com/is/image/mclaren/720S-Coupe_hero:crop-16x9?",
       "status": true
+    },
+    {
+      "id": 4,
+      "titulo": "Tesla Model S",
+      "preco": 1.079,
+      "descricao": "Autonomia (WLTP): 600 km,  0-100 km/h:  2,1 s, Velocidade máxima: 322 km/h, Potência do veículo: 1020 CV ",
+      "data": "2023-06-06",
+      "imagem": "https://img.olhardigital.com.br/wp-content/uploads/2021/05/Tesla-Model-S-Plaid.png",
+      "status": false
     }
   ]
 }
